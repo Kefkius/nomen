@@ -1,0 +1,20 @@
+.expired-name {
+  color: red;
+}
+.table thead {
+/*  color: #294A29;*/
+/*  background-color: #495F7E;*/
+  font-family: "Open Sans", sans-serif;
+  color: #3A4B66;
+}
+.table-hover tbody tr:hover td {
+  background-color: #F2F2FF;
+}
+.address {
+  font-family: "Anonymous Pro", monospace;
+}
+#nomen-header {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: bold;
+  color: #263F5E;
+}

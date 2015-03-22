@@ -1,0 +1,85 @@
+<section data-ng-controller="DomainCtrl" data-ng-init="initDomain()">
+<div class="row">
+  <div class="page-header">
+    <h3 class="text-center">{{activeDomain.name}}</h3>
+  </div>
+
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4 class="text-center panel-title">Summary</h4>
+      </div>
+      <div class="panel-body">
+        <table class="table table-condensed">
+          <tr>
+            <td><strong>Address</strong></td>
+            <td class="address">{{activeDomain.address}}</td>
+          </tr>
+          <tr>
+            <td><strong>Txid</strong></td>
+            <td>{{activeDomain.txid}}</td>
+          </tr>
+          <tr>
+            <td><strong>Registered At</strong></td>
+            <td>block {{activeDomain.height}}</td>
+          </tr>
+          <tr>
+            <td><strong>Expires In</strong></td>
+            <td>
+              <div data-ng-show="!activeDomain.expired" data-ng-class="{'text-danger': activeDomain.expires_in<145,'text-warning': activeDomain.expires_in<1009}">{{activeDomain.expires_in}} blocks</div>
+              <div data-ng-show="activeDomain.expired" class="expired-name">Expired</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div> <!-- panel -->
+    <br>
+
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4 class="text-center panel-title">Domain <small>(Known domain fields)</small></h4>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center">Key</th>
+              <th class="text-center">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="(key, value) in activeDomain.value">
+              <td>{{key}}</td>
+              <td>{{value}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> <!-- panel -->
+    <br>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="text-center panel-title">Other <small>(Other fields found)</small></h4>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="text-center">Key</th>
+              <th class="text-center">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-ng-repeat="(key, value) in activeDomain.other">
+              <td>{{key}}</td>
+              <td>{{value}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div> <!-- panel -->
+
+  </div> <!-- column -->
+</div>
+</section>

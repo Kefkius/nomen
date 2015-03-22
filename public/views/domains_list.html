@@ -1,0 +1,34 @@
+<section data-ng-controller="DomainsCtrl" data-ng-init="getDomains()">
+<div class="row">
+  <div class="page-header">
+    <h3 class="text-center">Domains</h3>
+  </div>
+
+  <div class="col-md-12">
+    <table class="table table-bordered table-hover" data-sort-name="identifier">
+      <thead>
+        <tr>
+          <th data-field="identifier" class="text-center">Identifier</th>
+          <th data-field="name" class="text-center">Name</th>
+          <th data-field="address" class="text-center">Address</th>
+          <th data-field="expiresIn" class="text-center">Expires In</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="i in myDomains">
+          <td><a href="/#/{{i.name}}">{{i.name}}</a></td>
+          <td>{{i.value.name}}</td>
+          <td class="address">{{i.address}}</td>
+          <td>
+            <div data-ng-show="!i.expired" data-ng-class="{'text-danger': i.expires_in<145,'text-warning': i.expires_in<1009}">{{i.expires_in}} blocks</div>
+            <div data-ng-show="i.expired" class="expired-name">
+              Expired
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</section>

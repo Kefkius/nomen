@@ -1,0 +1,36 @@
+<section data-ng-controller="SearchCtrl" data-ng-init="doSearch()">
+<div class="row">
+  <div class="page-header">
+    <h3 class="text-center">Search</h3>
+  </div>
+
+<!--
+  <form data-ng-submit="doSearch()" class="form-inline text-center" role="form">
+    <div class="form-group">
+      <label for="query">Query:</label>
+      <input type="text" class="form-control" id="query" placeholder="Enter query" data-ng-model="searchQuery">
+    </div>
+    <div class="form-group">
+      <label for="maxresults">Max Results:</label>
+      <input type="number" min="0" max="100" placeholder="Number (0-100)" id="maxresults" data-ng-model="searchMaxResults">
+    </div>
+    <button type="submit" class="btn btn-default">Search</button>
+  </form><br />
+-->
+
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center">Search Results</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="name in searchResults">
+          <td><a href="/#/{{name}}">{{name}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default row">
+  <div class="navbar-header">
+    <a id="nomen-header" class="navbar-brand" href="#">Nomen</a>
+  </div>
+
+  <ul class="nav navbar-nav">
+    <li><a href="/#/ids">Ids</a></li>
+    <li><a href="/#/domains">Domains</a></li>
+    <li><a href="/#/expired">Expired Names</a></li>
+  </ul>
+
+  <div data-ng-controller="SearchCtrl" class="navbar-header">
+    <form class="navbar-form" role="search" data-ng-submit="doQuery()">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search names" minlength="1" required data-ng-model="searchQuery">
+      </div>
+      <button type="submit" class="btn btn-default">Search</button>
+    </form>
+  </div>
+
+  <div data-ng-controller="BalanceCtrl" data-ng-init="refreshBalance()" class="navbar-header">
+    <p class="navbar-text">Balance: {{myBalance}}</p>
+    <button type="button" class="btn btn-default navbar-btn" data-ng-click="refreshBalance()">
+      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>
