@@ -3,7 +3,7 @@ package node
 import (
 	"encoding/json"
 	"errors"
-	"github.com/btcsuite/btcjson"
+	"github.com/btcsuite/btcd/btcjson"
 	"github.com/kefkius/nmcjson"
 	"github.com/kefkius/nomen/config"
 	"github.com/kefkius/nomen/models"
